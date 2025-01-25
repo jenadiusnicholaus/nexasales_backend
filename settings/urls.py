@@ -28,6 +28,8 @@ def urlpath(suffix):
 urlpatterns = [
     path("admin/", admin.site.urls),
     path(urlpath("nexa-auth"), include("naxa_auth.urls")),
+    path(urlpath("order-manager"), include("order_manager.urls")),
+    path(urlpath("settings"), include("shared.urls")),
 ]
 
 if settings.DEBUG:
