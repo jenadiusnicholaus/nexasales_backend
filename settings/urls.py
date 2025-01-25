@@ -16,13 +16,18 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 
+def urlpath(suffix):
+    return f"api/{settings.API_VERSION}/{suffix}/"
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path(urlpath("nexa-auth"), include("naxa_auth.urls")),
 ]
 
 if settings.DEBUG:
