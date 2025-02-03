@@ -63,7 +63,7 @@ class OrderManagerViewSet(viewsets.ModelViewSet):
 
         order_data = {
             "user": request.user.id,
-            "name": request.data.get("name"),
+            "name": request.data.get("order_name"),
             "service_provider": request.data.get("service_provider_uuid"),
             "order_date": request.data.get("order_date"),
         }
