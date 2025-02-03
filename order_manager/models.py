@@ -23,6 +23,7 @@ class Order(BaseModel):
         OrderServiceProvider, on_delete=models.SET_NULL, null=True
     )
     order_number = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True)
     order_date = models.DateField()
     to_be_billed = models.BooleanField(default=False)
 
